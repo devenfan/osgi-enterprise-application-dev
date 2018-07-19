@@ -8,37 +8,55 @@
     <groupId>com.csdn.osgi</groupId>
     <artifactId>osgi-tutorial-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-
     <packaging>pom</packaging>
+
     <name>${project.artifactId}</name>
 
-    <!--<modules>-->
-        <!--<module>com.csdn.osgi.common</module>-->
-        <!--<module>com.csdn.osgi.database</module>-->
-        <!--<module>com.csdn.osgi.helloworld</module>-->
-        <!--<module>com.csdn.osgi.test.web</module>-->
-        <!--<module>com.csdn.osgi.user</module>-->
-        <!--<module>com.csdn.osgi.user.web</module>-->
-    <!--</modules>-->
+    <modules>
+        <module>com.csdn.osgi.common</module>
+        <module>com.csdn.osgi.database</module>
+        <module>com.csdn.osgi.helloworld</module>
+        <module>com.csdn.osgi.test.web</module>
+        <module>com.csdn.osgi.user</module>
+        <module>com.csdn.osgi.user.web</module>
+    </modules>
 
     <properties>
         <spring-osgi.version>4.3.18.RELEASE_1</spring-osgi.version>
         <gemini-blueprint.version>2.1.0.RELEASE</gemini-blueprint.version>
     </properties>
 
+
     <dependencies>
+
+        <!-- osgi -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.core</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- commons-osgi -->
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-dbcp</artifactId>
-            <version>1.4.3</version>
+            <version>1.4_3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.commons-pool</artifactId>
             <version>1.5.4_4</version>
         </dependency>
+
+
+        <!-- jars support osgi -->
+
+        <!--<dependency>-->
+            <!--<groupId>org.apache.servicemix.bundles</groupId>-->
+            <!--<artifactId>org.apache.servicemix.bundles.asm</artifactId>-->
+            <!--<version>3.3_2</version>-->
+        <!--</dependency>-->
 
         <!-- spring-osgi -->
         <dependency>
@@ -114,7 +132,171 @@
             <version>${gemini-blueprint.version}</version>
         </dependency>
 
+        <!-- dao -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.20</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql.jdbc</groupId>
+            <artifactId>com.springsource.com.mysql.jdbc</artifactId>
+            <version>5.1.6</version>
+        </dependency>
 
     </dependencies>
+
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.felix</groupId>-->
+                    <!--<artifactId>maven-bundle-plugin</artifactId>-->
+                    <!--<version>3.5.1</version>-->
+                    <!--<extensions>true</extensions>-->
+                    <!--<configuration>-->
+                        <!--<instructions>-->
+                            <!--<Bundle-SymbolicName>${pom.groupId}.${pom.artifactId}</Bundle-SymbolicName>-->
+                            <!--<Bundle-Name>Service listener example</Bundle-Name>-->
+                            <!--<Bundle-Description>A bundle that displays messages at startup and when service events occur</Bundle-Description>-->
+                            <!--<Bundle-Vendor>Apache Felix</Bundle-Vendor>-->
+                            <!--<Bundle-Version>1.0.0</Bundle-Version>-->
+                            <!--<Bundle-Activator>tutorial.example1.HelloWorldActivator</Bundle-Activator>-->
+                            <!--<Export-Package>tutorial.example1.api</Export-Package>-->
+                            <!--<Private-Package>tutorial.example1.*</Private-Package>-->
+                            <!--<Import-Package>org.osgi.framework</Import-Package>-->
+                        <!--</instructions>-->
+                    <!--</configuration>-->
+                <!--</plugin>-->
+
+                <plugin>
+                    <groupId>org.eclipse.virgo.bundlor</groupId>
+                    <artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
+                    <version>1.1.2.RELEASE</version>
+                    <executions>
+                        <execution>
+                            <id>bundlor</id>
+                            <goals>
+                                <goal>bundlor</goal>
+                            </goals>
+                            <configuration>
+                                <!--<OSGiProfilePath>./virgo.profile</OSGiProfilePath>-->
+                                <manifestTemplatePath>${basedir}/src/main/resources/META-INF/MANIFEST.MF</manifestTemplatePath>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.eclipse.virgo.bundlor</groupId>
+                            <artifactId>org.eclipse.virgo.bundlor</artifactId>
+                            <version>1.1.2.RELEASE</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.eclipse.virgo.bundlor</groupId>
+                            <artifactId>org.eclipse.virgo.bundlor.blint</artifactId>
+                            <version>1.1.2.RELEASE</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.objectweb.asm</groupId>
+                            <artifactId>com.springsource.org.objectweb.asm</artifactId>
+                            <version>3.1.0</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.6.2</version>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.7</version>
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>copy-resources</id>-->
+                            <!--<phase>prepare-package</phase>-->
+                            <!--<goals>-->
+                                <!--<goal>copy-resources</goal>-->
+                            <!--</goals>-->
+                            <!--<configuration>-->
+                                <!--<overwrite>true</overwrite>-->
+                                <!--<outputDirectory>${project.build.outputDirectory}/WEB-INF/classes</outputDirectory>-->
+                                <!--<resources>-->
+                                    <!--<resource>-->
+                                        <!--<directory>${project.build.outputDirectory}</directory>-->
+                                        <!--<includes>-->
+                                            <!--<include>**/*.class</include>-->
+                                        <!--</includes>-->
+                                    <!--</resource>-->
+                                <!--</resources>-->
+                            <!--</configuration>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.0.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.0.2</version>
+                    <configuration>
+                        <!--<includes>-->
+                            <!--<include>WEB-INF/**/*</include>-->
+                            <!--<include>META-INF/**/*</include>-->
+                            <!--<include>resource*/**/*</include>-->
+                            <!--<include>**/*.html</include>-->
+                            <!--<include>**/*.js</include>-->
+                            <!--<include>**/*.css</include>-->
+                            <!--<include>**/*image*/**/*</include>-->
+                        <!--</includes>-->
+                        <archive>
+                            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                        </archive>
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+    </build>
 
 </project>

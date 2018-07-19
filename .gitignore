@@ -2,6 +2,10 @@
 */idea
 */*/idea
 
+*.iml
+*/*.iml
+*/*/*.iml
+
 target
 */target
 */*/target

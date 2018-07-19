@@ -8,7 +8,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-dbcp:1.4.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:osgi.core:6.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-dbcp:1.4_3" level="project" />
+    <orderEntry type="library" name="Maven: commons-pool:commons-pool:1.5.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.commons-pool:1.5.4_4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.spring-aop:4.3.18.RELEASE_1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.servicemix.bundles:org.apache.servicemix.bundles.spring-aspects:4.3.18.RELEASE_1" level="project" />
@@ -25,5 +27,28 @@
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.gemini.blueprint:gemini-blueprint-extender:2.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.gemini.blueprint:gemini-blueprint-io:2.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.2.4" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.20" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:jconsole:1.8.0">
+        <CLASSES>
+          <root url="jar://D:/Runtime/jdk1.8.0_131_x64/lib/jconsole.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:tools:1.8.0">
+        <CLASSES>
+          <root url="jar://D:/Runtime/jdk1.8.0_131_x64/lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Maven: com.mysql.jdbc:com.springsource.com.mysql.jdbc:5.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:com.springsource.org.apache.commons.logging:1.1.1" level="project" />
   </component>
 </module>

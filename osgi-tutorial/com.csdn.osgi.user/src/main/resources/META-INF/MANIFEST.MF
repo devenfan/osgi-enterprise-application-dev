@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: osgi-tutorial-user
+Bundle-SymbolicName: com.csdn.osgi.user
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: CSDN
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.mybatis.mybatis;bundle-version="3.1.1",
+ org.mybatis.mybatis-spring;bundle-version="1.2.3",
+ com.springsource.com.mysql.jdbc;bundle-version="5.1.6",
+ org.springframework.jdbc;bundle-version="3.0.0"
