@@ -1,0 +1,47 @@
+!SESSION 2017-01-07 15:35:31.953 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -dev file:G:/eclipse-workspace/osgi-tutorial/.metadata/.plugins/org.eclipse.pde.core/osgi/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -console
+
+!ENTRY com.csdn.osgi.database 4 0 2017-01-07 15:35:35.815
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.csdn.osgi.database [47]
+  Unresolved requirement: Require-Bundle: org.mybatis.mybatis-spring; bundle-version="1.2.0"
+    -> Bundle-SymbolicName: org.mybatis.mybatis-spring; bundle-version="1.2.0"
+       org.mybatis.mybatis-spring [48]
+         Unresolved requirement: Import-Package: org.springframework.batch; resolution:="optional"
+         Unresolved requirement: Import-Package: org.springframework.batch.item
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mybatis.mybatis-spring 4 0 2017-01-07 15:35:35.818
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mybatis.mybatis-spring [48]
+  Unresolved requirement: Import-Package: org.springframework.batch; resolution:="optional"
+  Unresolved requirement: Import-Package: org.springframework.batch.item
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 4 0 2017-01-07 15:35:35.819
+!MESSAGE Bundle initial@reference:file:../../com.csdn.osgi.database/ was not resolved.
+
+!ENTRY org.eclipse.osgi 4 0 2017-01-07 15:35:35.819
+!MESSAGE Bundle initial@reference:file:../mybatis/mybatis-spring-1.2.0.jar was not resolved.

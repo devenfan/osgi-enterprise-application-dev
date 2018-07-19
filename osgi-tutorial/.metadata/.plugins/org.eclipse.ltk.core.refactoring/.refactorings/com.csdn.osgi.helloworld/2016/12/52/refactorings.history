@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;com.csdn.osgi.helloworld/OSGI-INF/spring&apos; to &apos;blueprint&apos;" description="Rename resource &apos;spring&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="OSGI-INF/spring" name="blueprint" stamp="1482408623572" updateReferences="true"/>
+</session>

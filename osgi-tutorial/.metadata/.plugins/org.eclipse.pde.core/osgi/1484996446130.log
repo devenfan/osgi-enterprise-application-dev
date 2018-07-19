@@ -1,0 +1,24 @@
+!SESSION 2017-01-21 19:00:45.805 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -dev file:G:/eclipse-workspace/osgi-tutorial/.metadata/.plugins/org.eclipse.pde.core/osgi/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -console
+
+!ENTRY com.csdn.osgi.test.web 4 0 2017-01-21 19:00:47.160
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: com.csdn.osgi.test.web [64]
+  Unresolved requirement: Require-Bundle: org.eclipse.equinox.jsp.jasper; bundle-version="1.0.400"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1562)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 4 0 2017-01-21 19:00:47.190
+!MESSAGE Bundle initial@reference:file:../../com.csdn.osgi.test.web/ was not resolved.

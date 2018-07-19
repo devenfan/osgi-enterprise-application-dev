@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="DynamicRuntime" sequenceNumber="30">
+<locations>
+<location path="${workspace_loc}\DynamicRuntime\core" type="Directory"/>
+<location path="${workspace_loc}\DynamicRuntime\spring" type="Directory"/>
+<location path="${workspace_loc}\DynamicRuntime\blueprint" type="Directory"/>
+<location path="${workspace_loc}\DynamicRuntime\mybatis" type="Directory"/>
+<location path="${workspace_loc}\DynamicRuntime\common" type="Directory"/>
+<location path="${workspace_loc}\DynamicRuntime\mysql" type="Directory"/>
+</locations>
+</target>

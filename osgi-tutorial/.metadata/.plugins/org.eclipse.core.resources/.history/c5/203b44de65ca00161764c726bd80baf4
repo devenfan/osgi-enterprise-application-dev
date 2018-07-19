@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+   
+    <bean id="helloWorld1" class="com.csdn.osgi.HelloWorld"/>
+ 	<bean id="helloWorld2" class="com.csdn.osgi.HelloWorld"/>
+ 	
+</blueprint>

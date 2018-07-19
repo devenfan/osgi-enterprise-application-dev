@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" default-activation="lazy">
+    <bean id="object" class="java.lang.Object"/>
+    
+    <bean id="length" class="java.lang.Integer">
+        <argument value="4"/>
+    </bean>
+    
+    <bean id="buffer" class="java.lang.StringBuffer" depends-on="simple">
+    	<property name="length" ref="length"/>
+    </bean>
+    
+    <bean id="current-time" class="java.lang.System" factory-method="currentTimeMillis" scope="prototype"/>
+    
+    <bean id="list" class="java.util.ArrayList" destroy-method="clear" activation="eager">
+    	<argument ref="length"/>
+    </bean>
+</blueprint>
